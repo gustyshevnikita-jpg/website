@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgentForge — Ready-to-deploy AI agents</title>
+  <meta name="description" content="Buy production-ready AI agents for support, sales, research and operations. Deploy in minutes.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#top">⚡ AgentForge</a>
+    <nav>
+      <a href="#agents">Agents</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">Cart <span id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">AI agents, ready to work</p>
+      <h1>Hire an AI agent.<br>Not another tool to configure.</h1>
+      <p class="lead">Pre-built, tested agents for support, sales, research and operations. Pick one, connect your tools, and it's working in minutes.</p>
+      <div class="cta">
+        <a class="btn primary" href="#agents">Browse agents</a>
+        <a class="btn" href="#contact">Request a custom agent</a>
+      </div>
+      <ul class="stats">
+        <li><strong>12+</strong> agents</li>
+        <li><strong>&lt;10 min</strong> setup</li>
+        <li><strong>30-day</strong> money back</li>
+      </ul>
+    </section>
+
+    <section id="agents" class="section">
+      <h2>Choose your agent</h2>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section id="how" class="section alt">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><span>1</span><h3>Pick an agent</h3><p>Find the one that fits the job you want off your plate.</p></li>
+        <li><span>2</span><h3>Connect your tools</h3><p>Link email, CRM, helpdesk or docs with a few clicks.</p></li>
+        <li><span>3</span><h3>Let it work</h3><p>Review its output, tune its instructions, and scale up.</p></li>
+      </ol>
+    </section>
+
+    <section id="pricing" class="section">
+      <h2>Simple pricing</h2>
+      <div class="plans">
+        <article class="plan"><h3>Single agent</h3><p class="price">$49<small>/mo</small></p>
+          <ul><li>1 agent of your choice</li><li>1,000 runs / month</li><li>Email support</li></ul>
+          <a class="btn" href="#agents">Choose an agent</a></article>
+        <article class="plan featured"><h3>Team</h3><p class="price">$149<small>/mo</small></p>
+          <ul><li>Up to 5 agents</li><li>10,000 runs / month</li><li>Priority support</li><li>Custom instructions</li></ul>
+          <a class="btn primary" href="#contact">Get started</a></article>
+        <article class="plan"><h3>Custom</h3><p class="price">Let's talk</p>
+          <ul><li>Built for your workflow</li><li>Private deployment</li><li>Dedicated engineer</li></ul>
+          <a class="btn" href="#contact">Contact us</a></article>
+      </div>
+    </section>
+
+    <section id="faq" class="section alt">
+      <h2>FAQ</h2>
+      <details><summary>What is an AI agent?</summary><p>Software that uses a language model to complete multi-step tasks on its own — reading a ticket, looking up an order, drafting and sending a reply — rather than just answering a single prompt.</p></details>
+      <details><summary>Do I need to be technical?</summary><p>No. Setup is a guided form. For anything unusual, we'll help.</p></details>
+      <details><summary>What if it doesn't work for me?</summary><p>Every purchase has a 30-day money-back guarantee.</p></details>
+      <details><summary>Is my data safe?</summary><p>Your data is encrypted in transit and at rest and is never used to train models.</p></details>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Need something custom?</h2>
+      <form id="contactForm" class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label>Name <input name="name" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>What should the agent do? <textarea name="message" rows="4" required></textarea></label>
+        <button class="btn primary" type="submit">Send request</button>
+        <p class="note" id="formNote" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> AgentForge · <a href="#">Terms</a> · <a href="#">Privacy</a></footer>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head"><h3>Your cart</h3><button id="closeCart" aria-label="Close cart">✕</button></div>
+    <ul id="cartItems"></ul>
+    <div class="drawer-foot">
+      <p>Total: <strong id="cartTotal">$0</strong>/mo</p>
+      <button class="btn primary" id="checkout">Checkout</button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
