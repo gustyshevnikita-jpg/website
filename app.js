@@ -39,11 +39,19 @@ function renderGrid() {
 function saveCart() {
   try { localStorage.setItem("cart", JSON.stringify(cart)); } catch {}
   const items = cart.map((id) => AGENTS.find((a) => a.id === id)).filter(Boolean);
+  const total = money(items.reduce((s, a) => s + a.price, 0));
   $("#cartCount").textContent = items.length;
-  $("#cartTotal").textContent = money(items.reduce((s, a) => s + a.price, 0));
-  $("#cartItems").innerHTML = items.length
-    ? items.map((a) => `<li><span>${a.icon} ${a.name} — ${money(a.price)}</span><button data-remove="${a.id}" aria-label="Remove ${a.name}">✕</button></li>`).join("")
-    : "<li>Your cart is empty.</li>";
+  $("#cartHeadCount").textContent = items.length;
+  $("#cartSub").textContent = total;
+  $("#cartTotal").textContent = total;
+  $("#cartEmpty").style.display = items.length ? "none" : "";
+  $("#cartFoot").style.display = items.length ? "" : "none";
+  $("#cartItems").innerHTML = items.map((a) => `
+    <li>
+      <span class="ci-icon">${a.icon}</span>
+      <div class="ci-info"><strong>${a.name}</strong><small>${a.cat} · Monthly</small></div>
+      <div class="ci-end"><span class="ci-price">${money(a.price)}</span><button data-remove="${a.id}" aria-label="Remove ${a.name}">Remove</button></div>
+    </li>`).join("");
 }
 
 function toggleCart(open) {
@@ -52,6 +60,7 @@ function toggleCart(open) {
   $("#drawer").setAttribute("aria-hidden", String(!open));
 }
 
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleCart(false); });
 document.addEventListener("click", (e) => {
   const t = e.target;
   if (t.dataset.cat) { activeCat = t.dataset.cat; renderFilters(); renderGrid(); }
@@ -59,7 +68,7 @@ document.addEventListener("click", (e) => {
   if (t.dataset.remove) { cart = cart.filter((id) => id !== t.dataset.remove); saveCart(); }
 });
 $("#cartBtn").onclick = () => toggleCart(true);
-$("#closeCart").onclick = $("#scrim").onclick = () => toggleCart(false);
+$("#closeCart").onclick = $("#browseBtn").onclick = $("#scrim").onclick = () => toggleCart(false);
 
 $("#checkout").onclick = () => {
   const items = cart.map((id) => AGENTS.find((a) => a.id === id)).filter(Boolean);
