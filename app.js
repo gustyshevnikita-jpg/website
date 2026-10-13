@@ -82,3 +82,30 @@ $("#contactForm").addEventListener("submit", async (e) => {
 
 $("#year").textContent = new Date().getFullYear();
 renderFilters(); renderGrid(); saveCart();
+
+// ---- Hero slider (auto-advances, pauses on hover) ----
+(() => {
+  const root = $("#slider"), slides = [...root.querySelectorAll(".slide")], dots = $("#dots");
+  let i = 0, timer;
+  dots.innerHTML = slides.map((_, n) => `<button aria-label="Go to slide ${n + 1}"></button>`).join("");
+  const show = (n) => {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle("active", k === i));
+    [...dots.children].forEach((d, k) => d.classList.toggle("on", k === i));
+  };
+  const play = () => { clearInterval(timer); timer = setInterval(() => show(i + 1), 5500); };
+  dots.onclick = (e) => { const k = [...dots.children].indexOf(e.target); if (k > -1) { show(k); play(); } };
+  root.querySelector(".prev").onclick = () => { show(i - 1); play(); };
+  root.querySelector(".next").onclick = () => { show(i + 1); play(); };
+  root.onmouseenter = () => clearInterval(timer);
+  root.onmouseleave = play;
+  show(0); play();
+})();
+
+// ---- Scroll reveal ----
+(() => {
+  const els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) { els.forEach((e) => e.classList.add("in")); return; }
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12 });
+  els.forEach((e) => io.observe(e));
+})();

@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AgentForge — Ready-to-deploy AI agents</title>
   <meta name="description" content="Buy production-ready AI agents for support, sales, research and operations. Deploy in minutes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="nav">
-    <a class="logo" href="#top">⚡ AgentForge</a>
+    <a class="logo" href="#top">🌿 AgentForge</a>
     <nav>
       <a href="#agents">Agents</a>
       <a href="#how">How it works</a>
@@ -20,28 +22,61 @@
   </header>
 
   <main id="top">
-    <section class="hero">
-      <p class="eyebrow">AI agents, ready to work</p>
-      <h1>Hire an AI agent.<br>Not another tool to configure.</h1>
-      <p class="lead">Pre-built, tested agents for support, sales, research and operations. Pick one, connect your tools, and it's working in minutes.</p>
-      <div class="cta">
-        <a class="btn primary" href="#agents">Browse agents</a>
-        <a class="btn" href="#contact">Request a custom agent</a>
+    <section class="slider" id="slider" aria-roledescription="carousel" aria-label="Featured">
+      <div class="slides">
+        <div class="slide s1 active">
+          <div class="blob b1"></div><div class="blob b2"></div>
+          <div class="slide-inner">
+            <p class="eyebrow">AI agents, ready to work</p>
+            <h1>Hire an AI agent.<br><em>Not another tool</em> to configure.</h1>
+            <p class="lead">Pre-built, tested agents for support, sales, research and operations. Working in minutes.</p>
+            <div class="cta"><a class="btn primary" href="#agents">Browse agents</a><a class="btn ghost" href="#how">See how it works</a></div>
+          </div>
+        </div>
+        <div class="slide s2">
+          <div class="blob b1"></div><div class="blob b2"></div>
+          <div class="slide-inner">
+            <p class="eyebrow">Gentle on your time</p>
+            <h1>Let the busywork<br><em>grow quietly</em> in the background.</h1>
+            <p class="lead">Inbox triage, bookkeeping, outreach and research — handled while you focus on the work you love.</p>
+            <div class="cta"><a class="btn primary" href="#pricing">View pricing</a></div>
+          </div>
+        </div>
+        <div class="slide s3">
+          <div class="blob b1"></div><div class="blob b2"></div>
+          <div class="slide-inner">
+            <p class="eyebrow">Made for you</p>
+            <h1>Need something<br><em>one of a kind?</em></h1>
+            <p class="lead">We'll shape a custom agent around your workflow, your tools and your voice.</p>
+            <div class="cta"><a class="btn primary" href="#contact">Request a custom agent</a></div>
+          </div>
+        </div>
       </div>
-      <ul class="stats">
-        <li><strong>12+</strong> agents</li>
-        <li><strong>&lt;10 min</strong> setup</li>
-        <li><strong>30-day</strong> money back</li>
-      </ul>
+      <button class="arrow prev" aria-label="Previous slide">‹</button>
+      <button class="arrow next" aria-label="Next slide">›</button>
+      <div class="dots" id="dots"></div>
     </section>
 
-    <section id="agents" class="section">
+    <div class="marquee reveal" aria-label="What customers say">
+      <div class="track">
+        <span>“Cut our ticket backlog by 70%.” — Mara, shop owner</span>
+        <span>“Feels like hiring a careful new teammate.” — Jonas, agency</span>
+        <span>“Set up before my coffee got cold.” — Priya, consultant</span>
+        <span>“Our month-end close takes an hour now.” — Tom, bookkeeper</span>
+        <span>“Cut our ticket backlog by 70%.” — Mara, shop owner</span>
+        <span>“Feels like hiring a careful new teammate.” — Jonas, agency</span>
+        <span>“Set up before my coffee got cold.” — Priya, consultant</span>
+        <span>“Our month-end close takes an hour now.” — Tom, bookkeeper</span>
+      </div>
+    </div>
+
+    <section id="agents" class="section reveal">
       <h2>Choose your agent</h2>
       <div class="filters" id="filters"></div>
       <div class="grid" id="grid"></div>
     </section>
 
-    <section id="how" class="section alt">
+    <section id="how" class="section alt reveal">
       <h2>How it works</h2>
       <ol class="steps">
         <li><span>1</span><h3>Pick an agent</h3><p>Find the one that fits the job you want off your plate.</p></li>
@@ -50,7 +85,7 @@
       </ol>
     </section>
 
-    <section id="pricing" class="section">
+    <section id="pricing" class="section reveal">
       <h2>Simple pricing</h2>
       <div class="plans">
         <article class="plan"><h3>Single agent</h3><p class="price">$49<small>/mo</small></p>
@@ -65,7 +100,7 @@
       </div>
     </section>
 
-    <section id="faq" class="section alt">
+    <section id="faq" class="section alt reveal">
       <h2>FAQ</h2>
       <details><summary>What is an AI agent?</summary><p>Software that uses a language model to complete multi-step tasks on its own — reading a ticket, looking up an order, drafting and sending a reply — rather than just answering a single prompt.</p></details>
       <details><summary>Do I need to be technical?</summary><p>No. Setup is a guided form. For anything unusual, we'll help.</p></details>
@@ -73,7 +108,7 @@
       <details><summary>Is my data safe?</summary><p>Your data is encrypted in transit and at rest and is never used to train models.</p></details>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
       <h2>Need something custom?</h2>
       <form id="contactForm" class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <label>Name <input name="name" required></label>
