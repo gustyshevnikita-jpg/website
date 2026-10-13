@@ -1,14 +1,14 @@
 // Edit this list to change what you sell. `checkout` is a payment link
 // (e.g. a Stripe Payment Link) — leave empty to use the cart-based demo flow.
 const AGENTS = [
-  { id: "support",  icon: "🎧", name: "Support Agent",   cat: "Support",    price: 49, desc: "Answers customer tickets from your help docs, escalates the tricky ones.", checkout: "" },
-  { id: "sdr",      icon: "📈", name: "Sales Outreach",  cat: "Sales",      price: 59, desc: "Researches leads and drafts personalised outreach and follow-ups.", checkout: "" },
-  { id: "research", icon: "🔎", name: "Research Analyst",cat: "Research",   price: 49, desc: "Searches the web, reads sources and delivers cited briefings.", checkout: "" },
-  { id: "inbox",    icon: "📬", name: "Inbox Manager",   cat: "Operations", price: 39, desc: "Triages email, drafts replies and flags what needs you.", checkout: "" },
-  { id: "content",  icon: "✍️", name: "Content Writer",  cat: "Marketing",  price: 49, desc: "Turns a brief into blog posts, social posts and newsletters in your voice.", checkout: "" },
-  { id: "books",    icon: "🧾", name: "Bookkeeping Aide",cat: "Operations", price: 69, desc: "Categorises transactions, chases invoices and preps month-end.", checkout: "" },
-  { id: "recruit",  icon: "🧑‍💼", name: "Recruiting Screener", cat: "Operations", price: 59, desc: "Screens résumés against your criteria and ranks candidates.", checkout: "" },
-  { id: "data",     icon: "📊", name: "Data Analyst",    cat: "Research",   price: 79, desc: "Ask questions in plain English; get queries, charts and answers.", checkout: "" },
+  { id: "support",  icon: "🎧", name: "Support Agent",   cat: "Support",    price: 79, desc: "Answers customer tickets from your help docs, escalates the tricky ones.", checkout: "" },
+  { id: "sdr",      icon: "📈", name: "Sales Outreach",  cat: "Sales",      price: 99, desc: "Researches leads and drafts personalised outreach and follow-ups.", checkout: "" },
+  { id: "research", icon: "🔎", name: "Research Analyst",cat: "Research",   price: 69, desc: "Searches the web, reads sources and delivers cited briefings.", checkout: "" },
+  { id: "inbox",    icon: "📬", name: "Inbox Manager",   cat: "Operations", price: 49, desc: "Triages email, drafts replies and flags what needs you.", checkout: "" },
+  { id: "content",  icon: "✍️", name: "Content Writer",  cat: "Marketing",  price: 59, desc: "Turns a brief into blog posts, social posts and newsletters in your voice.", checkout: "" },
+  { id: "books",    icon: "🧾", name: "Bookkeeping Aide",cat: "Operations", price: 89, desc: "Categorises transactions, chases invoices and preps month-end.", checkout: "" },
+  { id: "recruit",  icon: "🧑‍💼", name: "Recruiting Screener", cat: "Operations", price: 84, desc: "Screens résumés against your criteria and ranks candidates.", checkout: "" },
+  { id: "data",     icon: "📊", name: "Data Analyst",    cat: "Research",   price: 119, desc: "Ask questions in plain English; get queries, charts and answers.", checkout: "" },
 ];
 
 const $ = (s) => document.querySelector(s);
