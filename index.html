@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AgentForge — Ready-to-deploy AI agents</title>
   <meta name="description" content="Buy production-ready AI agents for support, sales, research and operations. Deploy in minutes.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="nav">
-    <a class="logo" href="#top"><span class="mark">A</span>GENTFORGE</a>
+    <a class="logo" href="#top"><span class="mark">✦</span>AgentForge</a>
     <nav>
       <a href="#agents">Agents</a>
       <a href="#how">How it works</a>
@@ -57,18 +55,7 @@
       <div class="dots" id="dots"></div>
     </section>
 
-    <div class="marquee reveal" aria-label="What customers say">
-      <div class="track">
-        <span>“Cut our ticket backlog by 70%.” — Mara, shop owner</span>
-        <span>“Feels like hiring a careful new teammate.” — Jonas, agency</span>
-        <span>“Set up before my coffee got cold.” — Priya, consultant</span>
-        <span>“Our month-end close takes an hour now.” — Tom, bookkeeper</span>
-        <span>“Cut our ticket backlog by 70%.” — Mara, shop owner</span>
-        <span>“Feels like hiring a careful new teammate.” — Jonas, agency</span>
-        <span>“Set up before my coffee got cold.” — Priya, consultant</span>
-        <span>“Our month-end close takes an hour now.” — Tom, bookkeeper</span>
-      </div>
-    </div>
+    <div class="marquee reveal" aria-label="Highlights"><div class="track"><span>Ready in minutes</span><span>30-day money-back guarantee</span><span>Works with the tools you already use</span><span>You stay in control of every action</span><span>Cancel anytime</span><span>Custom agents on request</span><span>Ready in minutes</span><span>30-day money-back guarantee</span><span>Works with the tools you already use</span><span>You stay in control of every action</span><span>Cancel anytime</span><span>Custom agents on request</span></div></div>
 
     <section id="agents" class="section reveal">
       <p class="kicker">The Collection</p><h2>Choose your agent</h2>
@@ -105,7 +92,7 @@
       <details><summary>What is an AI agent?</summary><p>Software that uses a language model to complete multi-step tasks on its own — reading a ticket, looking up an order, drafting and sending a reply — rather than just answering a single prompt.</p></details>
       <details><summary>Do I need to be technical?</summary><p>No. Setup is a guided form. For anything unusual, we'll help.</p></details>
       <details><summary>What if it doesn't work for me?</summary><p>Every purchase has a 30-day money-back guarantee.</p></details>
-      <details><summary>Is my data safe?</summary><p>Your data is encrypted in transit and at rest and is never used to train models.</p></details>
+      <details><summary>Is my data safe?</summary><p>We process your data only to provide the service. See our <a href="privacy.html">Privacy Policy</a> for details.</p></details>
     </section>
 
     <section id="contact" class="section reveal">
@@ -114,13 +101,17 @@
         <label>Name <input name="name" required></label>
         <label>Email <input type="email" name="email" required></label>
         <label>What should the agent do? <textarea name="message" rows="4" required></textarea></label>
+        <label class="check"><input type="checkbox" name="consent" required> <span>I have read the <a href="privacy.html">Privacy Policy</a> and agree that my details are used to answer my request.</span></label>
         <button class="btn primary" type="submit">Send request</button>
         <p class="note" id="formNote" role="status"></p>
       </form>
     </section>
   </main>
 
-  <footer class="footer">© <span id="year"></span> AgentForge · <a href="#">Terms</a> · <a href="#">Privacy</a></footer>
+  <footer class="footer">
+    <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refunds.html">Refund Policy</a><a href="cookies.html">Cookie Policy</a><a href="imprint.html">Legal Notice</a><a href="#" id="cookieSettings">Cookie settings</a></nav>
+    <p>© <span id="year"></span> [COMPANY NAME]. All rights reserved. Prices are shown excluding applicable taxes. AI agents can make mistakes — please review important outputs.</p>
+  </footer>
 
   <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Shopping cart">
     <div class="drawer-head">
@@ -137,13 +128,16 @@
     <div class="drawer-foot" id="cartFoot">
       <div class="row"><span>Subtotal</span><span id="cartSub">$0</span></div>
       <div class="row muted"><span>Setup fee</span><span>Free</span></div>
+      <div class="row muted"><span>Taxes (VAT/sales tax)</span><span>Calculated at checkout</span></div>
       <div class="row total"><span>Total <small>billed monthly</small></span><strong id="cartTotal">$0</strong></div>
+      <label class="check"><input type="checkbox" id="agreeTerms"> <span>I agree to the <a href="terms.html">Terms of Service</a> and have read the <a href="privacy.html">Privacy Policy</a> and <a href="refunds.html">Refund Policy</a>.</span></label>
       <button class="btn primary" id="checkout">Proceed to checkout</button>
       <ul class="trust"><li>🔒 Secure payment</li><li>↩ 30-day guarantee</li><li>✕ Cancel anytime</li></ul>
     </div>
   </aside>
   <div class="scrim" id="scrim"></div>
 
+  <script src="consent.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

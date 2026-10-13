@@ -73,6 +73,7 @@ $("#closeCart").onclick = $("#browseBtn").onclick = $("#scrim").onclick = () => 
 $("#checkout").onclick = () => {
   const items = cart.map((id) => AGENTS.find((a) => a.id === id)).filter(Boolean);
   if (!items.length) return;
+  if (!$("#agreeTerms").checked) { alert("Please accept the Terms of Service to continue."); return; }
   // Single item with a payment link -> go straight to it.
   if (items.length === 1 && items[0].checkout) { location.href = items[0].checkout; return; }
   alert("Payments aren't connected yet. Add a Stripe Payment Link to each agent's `checkout` field in app.js (see README).");

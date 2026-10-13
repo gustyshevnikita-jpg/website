@@ -8,3 +8,13 @@ Static site (no build step). Open `index.html` or run `python3 -m http.server`.
 - **Contact form**: create a form at formspree.io and replace `YOUR_FORM_ID` in `index.html`.
 - **Brand**: rename "AgentForge" in `index.html`; colours are CSS variables in `styles.css`.
 - **Hosting**: GitHub Pages, Netlify, Vercel or Cloudflare Pages all work as-is.
+
+## Legal pages (templates — action required before launch)
+`privacy.html`, `terms.html`, `refunds.html`, `cookies.html` and `imprint.html` are drafts with `[BRACKETED]` placeholders
+(company name, address, emails, VAT ID, providers, governing law…). Fill every one in, and have a lawyer review them for your
+country and business. Also needed in practice:
+- A **data processing agreement** (DPA) with each processor (hosting, Formspree, Stripe, AI providers) and one you offer customers.
+- At checkout for EU/UK consumers: an explicit "start immediately / lose withdrawal right" acknowledgement, and prices incl. VAT.
+- If you add analytics, ads or embeds, turn `consent.js` into an opt-in banner and update the Cookie/Privacy pages.
+- Replace the placeholder prices, agents and FAQ answers with claims you can back up. Never publish invented testimonials.
+- The site loads **no third-party fonts or scripts** (privacy-friendly). The contact form posts to Formspree; disclose your actual provider.
