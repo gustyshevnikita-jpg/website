@@ -12,6 +12,7 @@
     <a class="logo" href="#top"><span class="mark">✦</span>AgentForge</a>
     <nav>
       <a href="#agents">Agents</a>
+      <a href="#try">Try it</a>
       <a href="#live">Live demo</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
@@ -98,6 +99,27 @@
       <p class="kicker">The Collection</p><h2>Choose your agent</h2>
       <div class="filters" id="filters"></div>
       <div class="grid" id="grid"></div>
+    </section>
+
+    <section id="try" class="section reveal">
+      <p class="kicker">Try it</p>
+      <h2>Run a sample task</h2>
+      <p class="demo-note">A scripted walkthrough of what an agent does — no real AI call is made here.</p>
+      <div class="try">
+        <div class="try-controls">
+          <p class="lbl">1 · Choose an agent</p>
+          <div class="tabs" id="tryAgents" role="tablist"></div>
+          <p class="lbl">2 · Pick a task</p>
+          <div class="tasks" id="tryTasks"></div>
+          <button class="btn primary" id="tryRun">▶ Run sample task</button>
+        </div>
+        <div class="run" id="tryOut" aria-live="polite">
+          <div class="run-head"><span class="dots3"><i></i><i></i><i></i></span><span id="runTitle">Ready</span></div>
+          <ol class="steps-run" id="runSteps"></ol>
+          <div class="result" id="runResult"></div>
+          <p class="idle" id="runIdle">Pick an agent and a task, then press <strong>Run sample task</strong>.</p>
+        </div>
+      </div>
     </section>
 
     <section id="live" class="section alt reveal">
@@ -216,5 +238,6 @@
   <script src="consent.js"></script>
   <script src="app.js"></script>
   <script src="live.js"></script>
+  <script src="demo.js"></script>
 </body>
 </html>
